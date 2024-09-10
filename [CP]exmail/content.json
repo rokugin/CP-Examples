@@ -1,0 +1,37 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Format": "2.3.0",
+  "Changes": [
+    {
+      "LogName": "Add letters to mail data",
+      "Action": "EditData",
+      "Target": "Data/mail",
+      "Entries": {
+        "{{ModId}}_FirstExampleMail": "Greetings @,^This is example mail.^Have some money!^^  - Rokugin %item money 2000 %%[#]First Example Mail",
+        "{{ModId}}_SecondExampleMail": "To: Current Resident^This is also example mail.^This one has a recipe attached!^^  - Rokugin^^     *There's a recipe included* %item craftingRecipe Tea Sapling%%[#]Second Example Mail"
+      }
+    },
+    {
+      "LogName": "Add trigger actions to send mail",
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_Mail_FirstExample": { //Sends the mail on the very first day after installing the mod
+          "Id": "{{ModId}}_Mail_FirstExample",
+          "Trigger": "DayStarted",
+          "Actions": [
+            "AddMail Current {{ModId}}_FirstExampleMail now"
+          ]
+        },
+        "{{ModId}}_Mail_SecondExample": { //Sends mail the next day after Condition is met
+          "Id": "{{ModId}}_Mail_SecondExample",
+          "Trigger": "DayEnding",
+          "Condition": "DAYS_PLAYED 28",
+          "Actions": [
+            "AddMail Current {{ModId}}_SecondExampleMail tomorrow"
+          ]
+        }
+      }
+    }
+  ]
+}

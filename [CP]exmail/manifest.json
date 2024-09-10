@@ -1,0 +1,12 @@
+{
+  "$schema": "https://smapi.io/schemas/manifest.json",
+  "Name": "Example Mail Mod",
+  "Author": "rokugin",
+  "Version": "1.0.0",
+  "Description": "Sends example mail.",
+  "UniqueID": "rokugin.exmail",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}
