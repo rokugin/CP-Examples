@@ -1,0 +1,61 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Format": "2.3.0",
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "{{ModId}}/TestObject",
+      "FromFile": "assets/testobject.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_TestObject": {
+          "Name": "{{ModId}}_TestObject",
+          "DisplayName": "Test Object",
+          "Description": "Test object.",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 110,
+          "Texture": "{{ModId}}/TestObject",
+          "Edibility": 45,
+          "ContextTags": [
+            "color_blue",
+            "food_test"
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/CookingRecipes",
+      "Entries": {
+        "{{ModId}}_TestObject": "20 1 22 1 419 1/25 5/{{ModId}}_TestObject/null/"
+      }
+    },
+    {
+      "LogName": "Add letters to mail data",
+      "Action": "EditData",
+      "Target": "Data/mail",
+      "Entries": {
+        "{{ModId}}_TestObject_Recipe": "Mail body goes here. %item cookingRecipe {{ModId}}_TestObject%%[#]Test Object Recipe"
+      }
+    },
+    {
+      "LogName": "Add trigger actions to send mail",
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_Mail_TestObject_Recipe": {
+          "Id": "{{ModId}}_Mail_TestObject_Recipe",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current Emily 3",
+          "Actions": [
+            "AddMail Current {{ModId}}_TestObject_Recipe tomorrow"
+          ]
+        }
+      }
+    }
+  ]
+}
