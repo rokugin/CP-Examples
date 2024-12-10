@@ -1,0 +1,11 @@
+{
+  "Name": "Custom Location Example",
+  "Author": "rokugin",
+  "Version": "1.0.0",
+  "Description": "Example of adding a custom location.",
+  "UniqueID": "rokugin.excustomlocation",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

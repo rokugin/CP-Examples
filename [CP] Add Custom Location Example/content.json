@@ -1,0 +1,33 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Format": "2.4.0",
+  "Changes": [
+    {
+      "LogName": "Load tmx into Maps",
+      "Action": "Load",
+      "Target": "Maps/{{ModId}}_ExampleRoom",
+      "FromFile": "assets/rokuginExampleRoom.tmx"
+    },
+    {
+      "LogName": "Add custom location to Locations",
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ModId}}_ExampleRoom": {
+          "DisplayName": "Example Room",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ExampleRoom"
+          }
+        }
+      }
+    },
+    {
+      "LogName": "Add warp to custom location",
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "AddWarps": [
+        "100 14 {{ModId}}_ExampleRoom 9 16"
+      ]
+    }
+  ]
+}
