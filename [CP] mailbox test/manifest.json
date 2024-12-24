@@ -1,0 +1,12 @@
+{
+  // "$schema": "https://smapi.io/schemas/manifest.json",
+  "Name": "Mailbox Test",
+  "Author": "rokugin",
+  "Version": "1.0.0",
+  "Description": "Test moving mailbox.",
+  "UniqueID": "rokugin.mailboxtest",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

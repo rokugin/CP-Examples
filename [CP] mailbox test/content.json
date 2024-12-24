@@ -1,0 +1,46 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Format": "2.4.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "TargetField": [ "Farmhouse", "ActionTiles" ],
+      "Entries": {
+        "Default_Mailbox": null
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "TargetField": [ "Farmhouse", "DrawLayers" ],
+      "Entries": {
+        "Default_Mailbox": null
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Farm",
+      "MapProperties": {
+        "MailboxLocation": "77 14"
+      },
+      "MapTiles": [
+        {
+          "Layer": "Buildings",
+          "Position": { "X": 77, "Y": 14 },
+          "SetTilesheet": "untitled tile sheet",
+          "SetIndex": "1955",
+          "SetProperties": {
+            "Action": "Mailbox"
+          }
+        },
+        {
+          "Layer": "Front",
+          "Position": { "X": 77, "Y": 13 },
+          "SetTilesheet": "untitled tile sheet",
+          "SetIndex": "1930"
+        }
+      ]
+    }
+  ]
+}
