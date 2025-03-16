@@ -1,0 +1,11 @@
+{
+  "Name": "Example Fruit Tree",
+  "Author": "rokugin",
+  "Version": "1.0.0",
+  "Description": "Example fruit tree.",
+  "UniqueID": "rokugin.exfruittree",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}
